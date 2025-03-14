@@ -1,5 +1,4 @@
 import { Coin } from "@/app/services/zustand";
-import { stringify } from "querystring";
 import React from "react";
 
 type newType = {
@@ -10,12 +9,6 @@ function HeadInfo({ newCoin }: newType) {
   const options = { maximumFractionDigits: 2 };
   const formprice = Intl.NumberFormat("en-US", options).format(
     Number(newCoin?.current_price)
-  );
-  const formvolume = Intl.NumberFormat("en-US", options).format(
-    Number(newCoin?.total_volume)
-  );
-  const formcap = Intl.NumberFormat("en-US", options).format(
-    Number(newCoin?.market_cap)
   );
 
   const priceChange = Math.round(Number(newCoin?.price_change_24h));
