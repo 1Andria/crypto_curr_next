@@ -28,7 +28,7 @@ function About({ params }: ParamsType) {
       <BackBtn />
       <div className="flex w-full justify-between mt-[50px] pr-[50px] pl-[50px]">
         <HeadInfo newCoin={newCoin} />
-        <Swiper />
+        <Swiper newCoin={newCoin} />
       </div>
       <AdditionalInfo newCoin={newCoin} />
     </div>

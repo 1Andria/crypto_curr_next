@@ -25,7 +25,7 @@ function CoinList() {
       <div className="w-full  flex flex-col items-center mt-[60px] pb-[80px]">
         <div className="max-w-[1200px] w-full">
           <Input />
-          <div className="w-full mt-[30px] max-w-[1200px]  h-[60px] rounded-t-[18px] bg-[#f2f2f2] justify-around flex items-center ">
+          <div className="w-full pl-[15px] mt-[30px] max-w-[1200px]  h-[60px] rounded-t-[18px] bg-[#f2f2f2] justify-around flex items-center ">
             <h1 className="font-bold">COIN</h1>
             <h1 className="font-bold">PRICE</h1>
             <h1 className="font-bold">TOTAL VALUME</h1>
@@ -35,7 +35,7 @@ function CoinList() {
               <span className="font-normal text-[#727280]">(24h)</span>
             </h1>
           </div>
-          <div className="max-w-[1200px] flex flex-col  w-full">
+          <div className="max-w-[1200px] flex flex-col rounded-b-[18px]  w-full">
             {filtered.map((coin, key) => {
               return <CoinInfo key={key} coin={coin} />;
             })}

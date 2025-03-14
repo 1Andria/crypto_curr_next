@@ -27,7 +27,7 @@ function CoinInfo({ coin }: CoinInfoType) {
       <Link
         onClick={clear}
         href={`about/${formName}`}
-        className="w-full gap-[40px] flex bg-white items-center h-[90px] border-b-[1px] border-b-[#f2f2f2]"
+        className="w-full gap-[40px] flex bg-white items-center h-[90px] border-b-[1px] border-b-[#f2f2f2] shadow-lg pl-[5px]"
       >
         <Star />
         <div className="flex w-full items-center justify-between pr-[100px]">

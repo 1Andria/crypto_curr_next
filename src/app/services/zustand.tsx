@@ -18,6 +18,8 @@ export type Coin = {
   fully_diluted_valuation: number;
   total_supply: number;
   symbol: string;
+  ath: number;
+  atl: number;
 };
 export const useCoin = create<CoinTypes>((set) => ({
   coin: [],
