@@ -1,8 +1,9 @@
 import React from "react";
 import { Star } from "../../Icons/Star";
-import { Coin } from "@/app/services/zustand";
+import { Coin, useSearchValue } from "@/app/services/zustand";
 import Increasing from "../../Icons/Increasing";
 import Decreasing from "../../Icons/Decreasing";
+import Link from "next/link";
 
 type CoinInfoType = {
   coin: object & Coin;
@@ -18,9 +19,16 @@ function CoinInfo({ coin }: CoinInfoType) {
   );
   const formcap = Intl.NumberFormat("en-US", options).format(coin.market_cap);
 
+  const formName = coin.name.toLowerCase();
+  const clear = useSearchValue((state) => state.emptyValue);
+
   return (
     <>
-      <div className="w-full gap-[40px] flex bg-white items-center h-[90px] border-b-[1px] border-b-[#f2f2f2]">
+      <Link
+        onClick={clear}
+        href={`about/${formName}`}
+        className="w-full gap-[40px] flex bg-white items-center h-[90px] border-b-[1px] border-b-[#f2f2f2]"
+      >
         <Star />
         <div className="flex w-full items-center justify-between pr-[100px]">
           <div className="flex items-center w-[200px] ">
@@ -56,7 +64,7 @@ function CoinInfo({ coin }: CoinInfoType) {
             </div>
           </div>
         </div>
-      </div>
+      </Link>
     </>
   );
 }

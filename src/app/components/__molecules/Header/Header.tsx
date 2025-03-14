@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 function Header() {
   function Refresh() {
@@ -17,7 +18,9 @@ function Header() {
             LOGO
           </h1>
           <div className="flex gap-[25px]">
-            <h1 className="font-bold">Home</h1>
+            <Link href="/" className="font-bold">
+              Home
+            </Link>
             <h1 className="font-bold">Company</h1>
             <h1 className="font-bold">Services</h1>
             <h1 className="font-bold">Contact</h1>

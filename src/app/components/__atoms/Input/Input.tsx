@@ -3,6 +3,7 @@ import SearchIc from "../../Icons/searchIc";
 
 function Input() {
   const change = useSearchValue((state) => state.setSearchValue);
+  const value = useSearchValue((state) => state.SearchValue);
 
   return (
     <>
@@ -12,6 +13,7 @@ function Input() {
       >
         <SearchIc />
         <input
+          value={value}
           onChange={(e) => change(e.currentTarget.value)}
           placeholder="Search for a coin…"
           className={` focus:outline-none w-full text-[14px] font-normal text-black`}
