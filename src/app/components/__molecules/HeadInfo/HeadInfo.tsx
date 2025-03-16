@@ -35,7 +35,7 @@ function HeadInfo({ newCoin }: newType) {
             )}
             {newCoin?.price_change_24h && newCoin?.price_change_24h < 0 && (
               <h4 className="text-[#dc2626] mr-[-30px] font-semibold">
-                -{priceChange}$
+                {priceChange}$
               </h4>
             )}
             <h1 className="text-[30px] font-semibold">${formprice}</h1>

@@ -19,7 +19,7 @@ function CoinInfo({ coin }: CoinInfoType) {
   );
   const formcap = Intl.NumberFormat("en-US", options).format(coin.market_cap);
 
-  const formName = coin.name.toLowerCase();
+  const formName = coin.name.toLowerCase().replace(/\s+/g, "-");
   const clear = useSearchValue((state) => state.emptyValue);
 
   return (

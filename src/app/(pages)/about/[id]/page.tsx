@@ -15,7 +15,9 @@ type ParamsType = {
 
 function About({ params }: ParamsType) {
   const data = useCoin((state) => state.coin);
-  const newCoin = data.find((coin) => coin.name.toLowerCase() === params.id);
+  const newCoin = data.find(
+    (coin) => coin.name.toLowerCase().replace(/\s+/g, "-") === params.id
+  );
 
   useEffect(() => {
     FetchData();

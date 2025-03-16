@@ -43,7 +43,7 @@ function Swiper({ newCoin }: newType) {
   console.log(Data);
   return (
     <div className="flex flex-col">
-      <div className="w-[700px] h-[150px] rounded-[15px] shadow-lg">
+      <div className="w-[700px] border border-[1px]-black h-[150px] rounded-[15px] shadow-lg">
         {/* <Swiper
     slidesPerView={5}
     spaceBetween={15}
@@ -85,12 +85,12 @@ function Swiper({ newCoin }: newType) {
               <h1 className="text-[#9ca3af]">Price Change</h1>
               {newCoin?.price_change_24h && newCoin.price_change_24h > 0 && (
                 <h2 className={`font-semibold clear-start text-[#16a34a] `}>
-                  +{newCoin?.price_change_24h}$
+                  +{Math.round(newCoin?.price_change_24h)}$
                 </h2>
               )}
               {newCoin?.price_change_24h && newCoin.price_change_24h < 0 && (
                 <h2 className={`font-semibold clear-start text-[#dc2626] `}>
-                  {newCoin?.price_change_24h}$
+                  {Math.round(newCoin?.price_change_24h)}$
                 </h2>
               )}
             </div>
