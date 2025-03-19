@@ -5,6 +5,8 @@ import { useCoin, useSearchValue } from "@/app/services/zustand";
 import React, { useEffect } from "react";
 import CoinInfo from "../../__molecules/CoinInfo/CoinInfo";
 import Input from "../../__atoms/Input/Input";
+import MainSwiper from "../../__molecules/MainSwiper/MainSwiper";
+import SwiperComponent from "../../__molecules/Swiper/Swiper";
 
 function CoinList() {
   const info = useCoin((state) => state.coin);
@@ -24,6 +26,7 @@ function CoinList() {
     <>
       <div className="w-full  flex flex-col items-center mt-[60px] pb-[80px]">
         <div className="max-w-[1200px] w-full">
+          <MainSwiper />
           <Input />
           <div className="w-full pl-[15px] mt-[30px] max-w-[1200px]  h-[60px] rounded-t-[18px] bg-[#f2f2f2] justify-around flex items-center ">
             <h1 className="font-bold">COIN</h1>

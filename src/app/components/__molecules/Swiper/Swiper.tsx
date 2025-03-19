@@ -3,23 +3,19 @@
 import { FetchData } from "@/app/services/Api";
 import { Coin, useCoin } from "@/app/services/zustand";
 import React, { useEffect } from "react";
-// import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 
-// import "./styles.css";
-
-// type SwipType = {
-//   Swiper: React.JSX.Element;
-// };
-
-// import { Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
+import Image from "next/image";
+import Link from "next/link";
 type newType = {
   newCoin?: Coin;
 };
 
-function Swiper({ newCoin }: newType) {
+function SwiperComponent({ newCoin }: newType) {
   const Data = useCoin((state) => state.coin);
   useEffect(() => {
     FetchData();
@@ -40,29 +36,45 @@ function Swiper({ newCoin }: newType) {
     Number(newCoin?.total_volume)
   );
 
-  console.log(Data);
   return (
     <div className="flex flex-col">
-      <div className="w-[700px] border border-[1px]-black h-[150px] rounded-[15px] shadow-lg">
-        {/* <Swiper
-    slidesPerView={5}
-    spaceBetween={15}
-    pagination={{
-      clickable: true,
-    }}
-    modules={[Pagination]}
-    className="mySwiper"
-  >
-    <SwiperSlide>Slide 1</SwiperSlide>
-    <SwiperSlide>Slide 2</SwiperSlide>
-    <SwiperSlide>Slide 3</SwiperSlide>
-    <SwiperSlide>Slide 4</SwiperSlide>
-    <SwiperSlide>Slide 5</SwiperSlide>
-    <SwiperSlide>Slide 6</SwiperSlide>
-    <SwiperSlide>Slide 7</SwiperSlide>
-    <SwiperSlide>Slide 8</SwiperSlide>
-    <SwiperSlide>Slide 9</SwiperSlide>
-  </Swiper> */}
+      <div className="w-[700px] flex justify-between border border-[1px]-black h-[150px] pl-[10px] pr-[10px] rounded-[15px] shadow-lg">
+        <Swiper
+          slidesPerView={5}
+          spaceBetween={15}
+          loop={Data.length > 5}
+          speed={5000}
+          autoplay={{
+            delay: 0,
+            disableOnInteraction: false,
+          }}
+          modules={[Pagination, Autoplay]}
+          className="mySwiper w-full h-full"
+        >
+          {Data.map((ind, key) => (
+            <SwiperSlide key={key}>
+              <Link
+                href={`${ind.name.toLocaleLowerCase()}`}
+                className="flex flex-col justify-evenly  h-full "
+              >
+                <div className="flex items-start gap-[5px]">
+                  <Image
+                    src={ind.image}
+                    width={50}
+                    height={50}
+                    alt={ind.name}
+                    className="object-contain w-[70px] h-[70px]"
+                  />
+                  <h3 className="text-[12px] text-[#9ca3af]">
+                    #{ind.market_cap_rank}
+                  </h3>
+                </div>
+                <h2 className=" font-semibold">{ind.id}</h2>
+                <h3 className="text-[16px]">{ind.symbol}</h3>
+              </Link>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
 
       <div className="w-[700px] h-[130px] mt-[20px]  gap-[20px] rounded-[15px] shadow-lg flex flex-col items-center">
@@ -78,7 +90,7 @@ function Swiper({ newCoin }: newType) {
         <div className=" flex w-full h-full justify-between pl-[10px] pr-[10px] ">
           <div className="flex flex-col gap-[10px]">
             <div className="flex gap-[20px]">
-              <h1 className="text-[#9ca3af]">Price</h1>
+              <h1 className="text-[rgb(156,163,175)]">Price</h1>
               <h2 className="font-semibold">${formdPrice}</h2>
             </div>
             <div className="flex gap-[20px]">
@@ -127,4 +139,4 @@ function Swiper({ newCoin }: newType) {
   );
 }
 
-export default Swiper;
+export default SwiperComponent;
