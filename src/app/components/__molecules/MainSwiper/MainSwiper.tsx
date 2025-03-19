@@ -62,7 +62,7 @@ function MainSwiper({ newCoin }: newType) {
             return (
               <SwiperSlide key={key}>
                 <Link
-                  href={`/${ind.name.toLowerCase().replace(/\s+/g, "-")}`}
+                  href={`about/${ind.name.toLowerCase().replace(/\s+/g, "-")}`}
                   className="flex flex-col justify-evenly h-full"
                 >
                   <div className="flex items-start gap-[10px]">
