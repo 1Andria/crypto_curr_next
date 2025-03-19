@@ -37,6 +37,8 @@ function CoinInfo({ coin }: CoinInfoType) {
               className="w-[60px] mr-[5px] h-[60px]"
               src={coin.image}
               alt={coin.name}
+              width={100}
+              height={100}
             />
             <h1 className="font-semibold">{coin.name}</h1>
           </div>
