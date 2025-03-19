@@ -11,24 +11,14 @@ import "swiper/css/pagination";
 import { Autoplay, Pagination } from "swiper/modules";
 import Image from "next/image";
 import Link from "next/link";
-type newType = {
-  newCoin?: Coin;
-};
 
-function MainSwiper({ newCoin }: newType) {
+function MainSwiper() {
   const Data = useCoin((state) => state.coin);
   useEffect(() => {
     FetchData();
   }, []);
 
   const options = { maximumFractionDigits: 2 };
-  const formdPrice = Intl.NumberFormat("en-US", options).format(
-    Number(newCoin?.current_price)
-  );
-
-  const formdvolume = Intl.NumberFormat("en-US", options).format(
-    Number(newCoin?.total_volume)
-  );
 
   return (
     <div className="flex flex-col">
