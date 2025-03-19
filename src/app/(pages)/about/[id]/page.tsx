@@ -3,6 +3,7 @@
 import BackBtn from "@/app/components/__atoms/BackBtn/BackBtn";
 import AdditionalInfo from "@/app/components/__molecules/AdditionalInfo/AdditionalInfo";
 import HeadInfo from "@/app/components/__molecules/HeadInfo/HeadInfo";
+import SwiperComponent from "@/app/components/__molecules/Swiper/Swiper";
 import Swiper from "@/app/components/__molecules/Swiper/Swiper";
 import { FetchData } from "@/app/services/Api";
 import { useCoin } from "@/app/services/zustand";
@@ -30,7 +31,7 @@ function About({ params }: ParamsType) {
       <BackBtn />
       <div className="flex w-full justify-between mt-[50px] pr-[50px] pl-[50px]">
         <HeadInfo newCoin={newCoin} />
-        <Swiper newCoin={newCoin} />
+        <SwiperComponent newCoin={newCoin} />
       </div>
       <AdditionalInfo newCoin={newCoin} />
     </div>

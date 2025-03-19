@@ -10,7 +10,7 @@ function HeadInfo({ newCoin }: newType) {
   const formprice = Intl.NumberFormat("en-US", options).format(
     Number(newCoin?.current_price)
   );
-
+  //////////////////////////////////////////////////////
   const priceChange = Math.round(Number(newCoin?.price_change_24h));
   return (
     <div>

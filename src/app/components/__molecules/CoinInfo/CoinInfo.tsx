@@ -4,6 +4,7 @@ import { Coin, useSearchValue } from "@/app/services/zustand";
 import Increasing from "../../Icons/Increasing";
 import Decreasing from "../../Icons/Decreasing";
 import Link from "next/link";
+import Image from "next/image";
 
 type CoinInfoType = {
   coin: object & Coin;
@@ -32,7 +33,7 @@ function CoinInfo({ coin }: CoinInfoType) {
         <Star />
         <div className="flex w-full items-center justify-between pr-[100px]">
           <div className="flex items-center w-[200px] ">
-            <img
+            <Image
               className="w-[60px] mr-[5px] h-[60px]"
               src={coin.image}
               alt={coin.name}
