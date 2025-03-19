@@ -54,7 +54,7 @@ function SwiperComponent({ newCoin }: newType) {
           {Data.map((ind, key) => (
             <SwiperSlide key={key}>
               <Link
-                href={`${ind.name.toLocaleLowerCase()}`}
+                href={`${ind.name.toLowerCase().replace(/\s+/g, "-")}`}
                 className="flex flex-col justify-evenly  h-full "
               >
                 <div className="flex items-start gap-[5px]">
