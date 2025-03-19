@@ -80,12 +80,12 @@ function MainSwiper({ newCoin }: newType) {
                   <h2 className="font-semibold text-[20px]">{ind.id}</h2>
                   <h3 className="text-[16px]">{ind.symbol}</h3>
 
-                  <div className="flex ">
+                  <div className="flex gap-[10px] ">
                     <h1 className="text-[rgb(156,163,175)]">Price</h1>
                     <h2 className="font-semibold">${formdPrice}</h2>
                   </div>
 
-                  <div className="flex">
+                  <div className="flex gap-[10px]">
                     <h1 className="text-[#9ca3af]">Price Change</h1>
                     {ind.price_change_24h > 0 ? (
                       <h2 className="font-semibold text-[#16a34a]">
@@ -98,20 +98,20 @@ function MainSwiper({ newCoin }: newType) {
                     )}
                   </div>
 
-                  <div className="flex gap-[20px]">
+                  <div className="flex gap-[10px]">
                     <h1 className="text-[#9ca3af]">All Time High</h1>
                     <h2 className="font-semibold text-[#16a34a]">
                       ${formdath}
                     </h2>
                   </div>
-                  <div className="flex ">
+                  <div className="flex gap-[10px] ">
                     <h1 className="text-[#9ca3af]">All Time Low</h1>
                     <h2 className="font-semibold text-[#dc2626]">
                       ${formdatl}
                     </h2>
                   </div>
 
-                  <div className="flex gap-[20px]">
+                  <div className="flex gap-[10px]">
                     <h1 className="text-[#9ca3af]">Volume</h1>
                     <h2 className="font-semibold">${formdvolume}</h2>
                   </div>
