@@ -27,7 +27,7 @@ function About({ params }: ParamsType) {
   console.log(newCoin);
 
   return (
-    <div className="w-full flex flex-col pl-[30px]">
+    <div className="w-full flex flex-col pl-[30px] ">
       <BackBtn />
       <div className="flex w-full justify-between mt-[50px] pr-[50px] pl-[50px]">
         <HeadInfo newCoin={newCoin} />
