@@ -6,7 +6,6 @@ import React, { useEffect } from "react";
 import CoinInfo from "../../__molecules/CoinInfo/CoinInfo";
 import Input from "../../__atoms/Input/Input";
 import MainSwiper from "../../__molecules/MainSwiper/MainSwiper";
-import SwiperComponent from "../../__molecules/Swiper/Swiper";
 
 function CoinList() {
   const info = useCoin((state) => state.coin);

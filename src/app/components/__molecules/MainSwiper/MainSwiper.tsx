@@ -1,7 +1,7 @@
 "use client";
 
 import { FetchData } from "@/app/services/Api";
-import { Coin, useCoin } from "@/app/services/zustand";
+import { useCoin } from "@/app/services/zustand";
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 

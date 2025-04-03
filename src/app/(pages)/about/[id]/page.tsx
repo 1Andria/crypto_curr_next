@@ -4,7 +4,6 @@ import BackBtn from "@/app/components/__atoms/BackBtn/BackBtn";
 import AdditionalInfo from "@/app/components/__molecules/AdditionalInfo/AdditionalInfo";
 import HeadInfo from "@/app/components/__molecules/HeadInfo/HeadInfo";
 import SwiperComponent from "@/app/components/__molecules/Swiper/Swiper";
-import Swiper from "@/app/components/__molecules/Swiper/Swiper";
 import { FetchData } from "@/app/services/Api";
 import { useCoin } from "@/app/services/zustand";
 import React, { useEffect } from "react";
